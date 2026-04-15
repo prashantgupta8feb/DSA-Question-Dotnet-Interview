@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DSA_Question;
+using System;
 using System.Collections.Generic;
 
 namespace DSA_Questions
@@ -16,6 +17,16 @@ namespace DSA_Questions
             //MajorityElement.CallMajorityElement();
             //BinarySearch.CallBinarySearch();
             //Console.WriteLine(result);
+
+            //Abstract Class Demo
+            //BaseClass b;        // Declare variable b of type BaseClass
+            //b = new Child1();   // Instantiate Child1
+            //b.Display();        // Call Display() of class Child1
+            //b = new Child2();   // Instantiate Child2
+            //b.Display();        // Call Display() of class Child2
+            //Abstract Class Demo Ended
+            MaskWord.CallMaskWord();
+
             Console.ReadLine();
         }
 
