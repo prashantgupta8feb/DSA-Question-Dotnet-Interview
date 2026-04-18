@@ -13,11 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Must Revise Implementatiion\Dontnet10Upgrade.md" />
+    <Compile Include="Docs\Dontnet10Upgrade.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Must Revise Implementatiion\DependencyInjection.cs" />
+    <None Include="Must Revise Implementatiion\Design Pattern\DependencyInjection.cs" />
   </ItemGroup>
 
 </Project>

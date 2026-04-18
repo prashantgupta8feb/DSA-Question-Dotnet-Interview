@@ -1,3 +1,60 @@
+Condensed Level Summary for interview:
+Based on your ECU summary, here's your pro-level walkthrough:
+
+Opening line — set the context:
+
+"This is a legacy enterprise ASP.NET MVC application built on .NET Framework 4.8, following a classic layered architecture 
+with a hybrid UI, service layer, and stored-procedure based data access."
+
+The application follows a classic 3-tier N-tier architecture. The presentation tier handles HTTP requests via MVC controllers 
+and Web Forms. The business logic tier encapsulates domain rules in service classes. The data access tier abstracts database 
+operations through repositories using ADO.NET and stored procedures. Each tier has a single responsibility and only communicates 
+with the tier directly below it.  
+Strictly speaking it's N-tier rather than just 3-tier because there's an additional domain/DTO layer — AirportDomain — that acts 
+as a shared contract across all tiers, and a separate mapping layer via AutoMapper. So the separation is more granular than a 
+basic 3-tier.
+
+
+The flow — UI to Database:
+1. UI Layer
+
+"The UI is a hybrid of ASP.NET MVC controllers and legacy Web Forms pages. Incoming requests hit the Global.asax pipeline where 
+Application_AuthenticateRequest reconstructs the user principal from a Forms Authentication ticket and roles are loaded into session. 
+Requests then route conventionally to controllers like AccountController or AirportController, all inheriting from 
+BaseController which provides shared session and HttpContext helpers."
+
+2. Controller Layer
+
+"Controllers perform model binding and ModelState validation first. Before calling downstream, they set environment context via 
+CallContext.SetData('MuiEnvironment') so the data layer knows the execution context without needing it passed explicitly through 
+every method. Custom attributes like SessionExpireFilterAttribute and NoCache handle cross-cutting concerns at this level."
+
+3. Service Layer
+
+"Controllers delegate business logic to service classes in AccountService. These services orchestrate the business rules and 
+coordinate between multiple repositories when needed. DI is handled partially via Unity container through UnityControllerFactory,
+though some services still instantiate repositories directly using new — a technical debt we'd address in any modernization effort."
+
+4. Repository / Data Access Layer
+
+"Repositories implement IDataRepository<T> and use a custom ADO.NET helper — DataBlockHelper — to execute stored procedures. 
+The pattern is: build input parameters → call stored proc → read IDataReader or DataSet → map to domain DTOs. There's no ORM like
+Entity Framework — all data access is stored-procedure driven, which gives tight DB control but makes the layer verbose."
+
+5. Domain & Mapping
+
+"Domain objects from AirportDomain flow across all layers as DTOs. AutoMapper via MapperHelper handles mapping between domain 
+objects and view models centrally, keeping controllers clean."
+
+6. Logging & Audit
+
+"Logging is DB-coupled — audit events like password changes are written directly to audit tables via DatabaseLogger and 
+specialized audit loggers like AgentAccountChangeAuditLogger. This is tightly integrated into the data access helpers themselves."
+
+
+Closing — show architect thinking:
+
+"The architecture works well for a stable enterprise system but has clear modernization opportunities — inconsistent DI, server-side session dependency, no middleware pipeline, and DB-coupled logging. If migrating to .NET Core, the priorities would be: normalize DI with Microsoft.Extensions.DependencyInjection, replace Forms Auth with JWT, introduce a proper middleware pipeline, and adapt logging to Microsoft.Extensions.Logging while keeping the stored-proc layer intact initially to reduce risk."
 Below is a concise technical summary of the MUI project (current .NET Framework 4.8) covering architecture, major features and how they are implemented. Use this as a quick reference when planning the PoC migration.
 
 1.	Projects and high-level architecture
