@@ -1,4 +1,6 @@
 ﻿using DSA_Question;
+using DSA_Questions.Must_Revise_Implementatiion;
+
 using System;
 using System.Collections.Generic;
 
@@ -25,7 +27,24 @@ namespace DSA_Questions
             //b = new Child2();   // Instantiate Child2
             //b.Display();        // Call Display() of class Child2
             //Abstract Class Demo Ended
-            MaskWord.CallMaskWord();
+
+            //MaskWord
+            //MaskWord.CallMaskWord();
+
+            //Without Factory Design Pattern
+            //SixSeaterCar sixSeater = new SixSeaterCar();
+            //sixSeater.Start();
+            //FourSeaterCar fourSeater = new FourSeaterCar();
+            //fourSeater.Start();
+            //With Factory Design Pattern
+            CallFactoryDemo factoryDemo = new CallFactoryDemo();
+            factoryDemo.RunFactoryDemo();
+
+
+            //AbstractFactory Design Patter
+            //CallAbstractFactoryDemo obj = new CallAbstractFactoryDemo();
+            //obj.RunAbstractFactoryDemo();
+
 
             Console.ReadLine();
         }
