@@ -38,8 +38,13 @@ namespace DSA_Questions
             //FourSeaterCar fourSeater = new FourSeaterCar();
             //fourSeater.Start();
             //With Factory Design Pattern
+<<<<<<< HEAD
             //CallFactoryDemo factoryDemo = new CallFactoryDemo();
             //factoryDemo.RunFactoryDemo();
+=======
+            CallFactoryDemo factoryDemo = new CallFactoryDemo();
+            factoryDemo.RunFactoryDemo();
+>>>>>>> f3a3922875cfe69397f7508fb05150f62d6ff2ed
 
 
             //AbstractFactory Design Patter
