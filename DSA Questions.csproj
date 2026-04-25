@@ -20,4 +20,8 @@
     <None Include="Must Revise Implementatiion\Design Pattern\DependencyInjection.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.7" />
+  </ItemGroup>
+
 </Project>
