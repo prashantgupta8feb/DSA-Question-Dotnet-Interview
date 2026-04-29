@@ -32,4 +32,4 @@ Say this smoothly:
 
 “We fetch normalized data from the database using optimized queries with pagination. 
 Then in the service layer, we transform that data into DTOs by applying business logic such as status mapping. 
-Finally, we return a clean API response tailored for client consumption.”
+Finally, we return a clean API response tailored for client consumption..”
