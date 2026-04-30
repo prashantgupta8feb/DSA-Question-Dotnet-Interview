@@ -8,7 +8,7 @@ namespace DSA_Questions
 {
     //singleton design pattern implementation
 
-    public class Singleton
+    public sealed class Singleton
     {
         private static Singleton Instance = null;
         private static readonly object padlock = new object();
