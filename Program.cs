@@ -18,7 +18,8 @@ namespace DSA_Questions
             //MoveZeroesToEnd.Sum(109, 100);
             //MajorityElement.CallMajorityElement();
             //BinarySearch.CallBinarySearch();
-            LongestPalindromicSubstring.CallLongestPalindromicSubstring();
+            //LongestPalindromicSubstring.CallLongestPalindromicSubstring();
+            LengthOfLongestSubstring.CallLongestSubstringWithoutRepetition();
             //Console.WriteLine(result);
 
             //Abstract Class Demo
@@ -38,18 +39,20 @@ namespace DSA_Questions
             //FourSeaterCar fourSeater = new FourSeaterCar();
             //fourSeater.Start();
             //With Factory Design Pattern
-<<<<<<< HEAD
+
             //CallFactoryDemo factoryDemo = new CallFactoryDemo();
             //factoryDemo.RunFactoryDemo();
-=======
-            CallFactoryDemo factoryDemo = new CallFactoryDemo();
-            factoryDemo.RunFactoryDemo();
->>>>>>> f3a3922875cfe69397f7508fb05150f62d6ff2ed
+
+            //CallFactoryDemo factoryDemo = new CallFactoryDemo();
+            //factoryDemo.RunFactoryDemo();
 
 
             //AbstractFactory Design Patter
             //CallAbstractFactoryDemo obj = new CallAbstractFactoryDemo();
             //obj.RunAbstractFactoryDemo();
+
+            //Multithreading
+            //Multithreading.CallMultithreading();
 
 
             Console.ReadLine();
