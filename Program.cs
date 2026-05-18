@@ -12,6 +12,8 @@ namespace DSA_Questions
         public static void Main(string[] args)
         {
             //bool result = CheckAnagram.CallAnagram();
+            GroupAnagram.CallGroupAnagram();
+
             //bool result = CheckPalindrome.CallPalindrome();
             //CheckFrequency.CallCheckFrequency();
             //MoveZeroesToEnd.callMoveZeroToEnd();
@@ -19,7 +21,8 @@ namespace DSA_Questions
             //MajorityElement.CallMajorityElement();
             //BinarySearch.CallBinarySearch();
             //LongestPalindromicSubstring.CallLongestPalindromicSubstring();
-            LengthOfLongestSubstring.CallLongestSubstringWithoutRepetition();
+            //LengthOfLongestSubstring.CallLongestSubstringWithoutRepetition();
+
             //Console.WriteLine(result);
 
             //Abstract Class Demo
